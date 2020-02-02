@@ -1,20 +1,83 @@
 {
-  "name": "devutils",
-  "version": "1.0.0",
-  "description": "A Desktop App with different developer tools",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
+  "name": "dev-utils",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Olivier Esuka",
+    "email": "oesukam@gmail.com"
   },
-  "repository": "https://github.com/oesukam/devutils",
-  "keywords": [
-    "dev",
-    "utils",
-    "devutils",
-    "devtools"
-  ],
-  "author": "GitHub",
-  "license": "MIT",
+  "build": {
+    "appId": "com.oesukam.dev-utils",
+    "nsis": {
+      "oneClick": false,
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "icon": "src/assets/icons/icon.icns",
+      "category": "public.app-category.developer-tools"
+    },
+    "dmg": {
+      "icon": "src/assets/icons/icon.icns"
+    },
+    "linux": {
+      "icon": "src/assets/icons/icon.png",
+      "category": "Tools",
+      "target": [
+        "AppImage",
+        "zip",
+        "deb"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "win": {
+      "icon": "src/assets/icons/icon.ico",
+      "publisherName": "Olivier Esuka"
+    }
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.0",
+    "electron-builder": "^22.3.2",
+    "electron-is-dev": "^1.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1",
+    "typescript": "~3.7.2",
+    "wait-on": "^4.0.0"
+  },
+  "scripts": {
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test",
+    "react:eject": "react-scripts eject",
+    "build": "yarn react:build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react:start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
     "electron": "^7.1.11"
   }
