@@ -1,0 +1,21 @@
+{
+  "name": "devutils",
+  "version": "1.0.0",
+  "description": "A Desktop App with different developer tools",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/oesukam/devutils",
+  "keywords": [
+    "dev",
+    "utils",
+    "devutils",
+    "devtools"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^7.1.11"
+  }
+}
