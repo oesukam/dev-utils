@@ -56,12 +56,12 @@
     "wait-on": "^4.0.0"
   },
   "scripts": {
-    "react:start": "react-scripts start",
-    "react:build": "react-scripts build",
-    "react:test": "react-scripts test",
-    "react:eject": "react-scripts eject",
+    "start:react": "react-scripts start",
+    "build:react": "react-scripts build",
+    "test:react": "react-scripts test",
+    "eject:react": "react-scripts eject",
     "build": "yarn react:build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react:start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"cross-env BROWSER=none npm run start:react\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -79,6 +79,9 @@
     ]
   },
   "devDependencies": {
-    "electron": "^7.1.11"
+    "@types/styled-components": "^4.4.2",
+    "electron": "^7.1.11",
+    "node-sass": "^4.13.1",
+    "styled-components": "^5.0.0"
   }
 }
