@@ -4,4 +4,5 @@ export default {
   carolinaBlue: '#4D9DE0',
   blueEyes: '#A3CEF1',
   grayColor: '#7d7d7d',
+  lightGrayColor: '#c7c7c726',
 }
