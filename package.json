@@ -81,7 +81,7 @@
   "devDependencies": {
     "@types/styled-components": "^4.4.2",
     "electron": "^7.1.11",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "styled-components": "^5.0.0"
   }
 }
